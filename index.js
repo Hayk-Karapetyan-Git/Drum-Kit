@@ -39,6 +39,6 @@ const animation = (clickedButton) => {
 
 document
   .querySelectorAll(".drum")
-  .forEach((e) => e.addEventListener("click", () => audioPlay(e.innerHTML)));
+  .forEach((e) => e.addEventListener("click", () => {audioPlay(e.innerHTML), animation(e.innerHTML)}));
 
-document.addEventListener("keydown", (e) => audioPlay(e.key));
+document.addEventListener("keydown", (e) => {audioPlay(e.key), animation(e.key)});
