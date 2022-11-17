@@ -29,6 +29,14 @@ const audioPlay = (clickedButton) => {
   audio.play();
 };
 
+const animation = (clickedButton) => {
+  const activeButton = document.querySelector(`.${clickedButton}`);
+  activeButton.classList.add("pressed");
+  setTimeout(() => {
+    activeButton.classList.remove("pressed");
+  },1000);
+}
+
 document
   .querySelectorAll(".drum")
   .forEach((e) => e.addEventListener("click", () => audioPlay(e.innerHTML)));
